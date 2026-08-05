@@ -49,7 +49,7 @@ function Index() {
                     <Skills />
                     <Achievements />
                     <Testimonials />
-                    <Blog />
+                    {/* <Blog /> */}
                     <Contact />
                     <Footer />
                 </main>

@@ -3,6 +3,7 @@ import { otherProjects, projects } from "@/data/portfolio";
 import { Reveal } from "./Reveal";
 import { SectionShell } from "./SectionShell";
 import Github from "../../../public/svg/Github";
+import Image from "next/image";
 
 export function Projects() {
   return (
@@ -17,7 +18,7 @@ export function Projects() {
           <Reveal as="article" key={project.name} delay={i * 0.07}>
             <div className="card-lift grid gap-6 rounded-2xl border border-border bg-surface/50 p-5 sm:grid-cols-[1.1fr_1fr] sm:items-center sm:p-6">
               <div className="overflow-hidden rounded-xl border border-border">
-                <img
+                <Image
                   src={project.image}
                   alt={`${project.name} interface preview`}
                   width={1200}

@@ -10,28 +10,51 @@ import { SectionShell } from "./SectionShell";
 import Mail from "../../../public/svg/Mail";
 import Linkedin from "../../../public/svg/Linkedin";
 import Github from "../../../public/svg/Github";
+import Link from "next/link";
 
 const inputClass =
   "w-full rounded-lg border border-input bg-surface/60 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-primary/60 focus:outline-none";
 
 export function Contact() {
   const [sending, setSending] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async(event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const form = event.currentTarget;
+    const formElement = event.currentTarget;
     setSending(true);
-    window.setTimeout(() => {
-      setSending(false);
-      toast.success("Thanks for reaching out — I'll reply within a day or two.");
-      form.reset();
-    }, 700);
+
+     try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(form),
+            });
+
+            if (!response.ok) throw new Error("Failed to send message");
+
+            toast.success("Message sent successfully!");
+            formElement.reset();
+            setForm({ name: "", email: "", subject: "", message: "" });
+        } catch (error) {
+            toast.error("Something went wrong. Please try again later.");
+        } finally {
+            setSending(false);
+            
+        }
+
+
+    // window.setTimeout(() => {
+    //   setSending(false);
+    //   toast.success("Thanks for reaching out — I'll reply within a day or two.");
+    //   form.reset(); 
+    // }, 700);
   };
 
   return (
     <SectionShell
       id="contact"
-      index="08"
+      index="07"
       title="Contact"
       eyebrow="I'm open to senior engineering roles and selective consulting work. Say hello."
     >
@@ -53,11 +76,29 @@ export function Contact() {
                   id="contact-email"
                   name="email"
                   type="email"
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
                   required
                   className={inputClass}
                   placeholder="you@company.com"
                 />
               </div>
+            </div>
+            <div>
+              <label htmlFor="contact-message" className="mb-2 block text-sm">
+                Subject
+              </label>
+              <input
+                id="contact-subject"
+                name="subject"
+                type="text"
+                value={form.subject}
+                onChange={(e) => setForm({ ...form, subject: e.target.value })}
+                required
+                className={inputClass}
+                placeholder="What is this about?"
+              />
+
             </div>
             <div>
               <label htmlFor="contact-message" className="mb-2 block text-sm">
@@ -70,6 +111,8 @@ export function Contact() {
                 rows={5}
                 className={inputClass}
                 placeholder="What are you building?"
+                value={form.message}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
               />
             </div>
             <MagneticButton type="submit" variant="solid">
@@ -114,9 +157,11 @@ export function Contact() {
                 </a>
               </li>
             </ul>
-            <MagneticButton href={profile.resumeUrl}>
-              <Download className="h-4 w-4" />
-              Download Resume
+            <MagneticButton>
+              <Link href={profile.resumeUrl} download="Omotosho_Ayomikun_Resume.pdf" className="flex gap-3">
+                <Download className="h-4 w-4" />
+                Download Resume
+              </Link>
             </MagneticButton>
           </div>
         </Reveal>

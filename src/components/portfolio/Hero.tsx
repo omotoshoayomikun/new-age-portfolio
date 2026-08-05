@@ -27,7 +27,7 @@ export function Hero() {
       {/* <ParticleField /> */}
       <div className="relative flex min-h-full flex-col justify-center lg:h-dvh">
         <motion.p className="eyebrow" {...stagger(0)}>
-          Hi, my name is
+          Hi,
         </motion.p>
 
         <motion.h2
@@ -50,9 +50,11 @@ export function Hero() {
         </motion.p>
 
         <motion.div className="mt-10 flex flex-wrap items-center gap-4" {...stagger(4)}>
-          <MagneticButton href="#projects" variant="solid">
-            View My Work
-            <ArrowDown className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
+          <MagneticButton variant="solid">
+            <Link href={profile.resumeUrl} target="_blank" rel="noopener noreferrer" className="flex gap-3">
+              View Full Resume
+              <ArrowDown className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
+            </Link>
           </MagneticButton>
           <MagneticButton href={`mailto:${profile.email}`}>Get in touch</MagneticButton>
         </motion.div>

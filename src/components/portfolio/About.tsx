@@ -10,23 +10,32 @@ export function About() {
         <div className="space-y-5 text-base leading-relaxed text-muted-foreground">
           <Reveal>
             <p>
-              I&apos;m {profile.firstName} — a full stack developer who started out rebuilding a
-              broken school website with a borrowed laptop and never really stopped. Nine years
-              later, the appeal is the same: taking something tangled and making it feel obvious.
+              I&apos;m {profile.firstName} — a full-stack developer who enjoys turning ideas into reliable,
+              scalable digital products. What started as curiosity about how websites work has grown into a
+              passion for building applications that solve real problems and deliver great user experiences.
             </p>
           </Reveal>
           <Reveal delay={0.08}>
             <p>
-              Today I work across the stack on products where reliability matters — analytics
-              platforms, healthcare tooling, infrastructure. I care about the unglamorous parts:
-              clear data models, honest loading states, keyboard paths, and interfaces that respect
-              the person on the other side of the screen.
+              Over the years, I've worked across the full stack, building web applications,
+              REST APIs, and secure backend systems with modern technologies like React, Next.js,
+              Node.js, TypeScript, Express, and MongoDB. I enjoy designing clean architectures,
+              optimizing performance, and creating interfaces that are intuitive, accessible,
+              and built to scale.
             </p>
           </Reveal>
           <Reveal delay={0.16}>
             <p>
-              Outside of work you&apos;ll find me writing about rendering strategies, restoring film
-              cameras, and running slowly but consistently along the canal in {profile.location}.
+              I'm particularly interested in developer experience, application security,
+              and building software that's maintainable long after the first release.
+              Whether I'm developing a business platform, an AI-powered solution, or an enterprise
+              system, I focus on writing clean, dependable code that users and teams can trust.
+            </p>
+          </Reveal>
+          <Reveal delay={0.25}>
+            <p>
+              When I'm not coding, I'm exploring emerging technologies, contributing to personal projects,
+              learning new tools, and continuously refining my craft as a software engineer based in {profile.location}.
             </p>
           </Reveal>
 
@@ -50,19 +59,22 @@ export function About() {
         </div>
 
         <Reveal delay={0.1} className="lg:pt-2">
-          <figure className="group relative mx-auto max-w-xs lg:max-w-none">
-            <div
+          <figure className="group relative mx-auto max-w-xs lg:max-w-none ">
+            {/* <div
               aria-hidden
               className="absolute inset-0 translate-x-4 translate-y-4 rounded-2xl border border-primary/40 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2"
-            />
-            <Image
-              src="/images/portrait.jpg"
-              alt={`Portrait of ${profile.name}, ${profile.title}`}
-              width={912}
-              height={1104}
-              loading="lazy"
-              className="relative aspect-[4/5] w-full rounded-2xl border border-border object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
-            />
+            /> */}
+            <div className="overflow-hidden w-[286px] h-[358px]">
+
+              <Image
+                src="/images/portrait.png"
+                alt={`Portrait of ${profile.name}, ${profile.title}`}
+                width={912}
+                height={1104}
+                loading="lazy"
+                className="relative aspect-[4/5] w-full rounded-2xl border border-border object-cover grayscale-0 transition-all duration-500 group-hover:grayscale-0 hover:scale-[1.25]"
+              />
+            </div>
           </figure>
         </Reveal>
       </div>
