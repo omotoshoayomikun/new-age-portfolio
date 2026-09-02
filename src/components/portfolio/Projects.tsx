@@ -4,6 +4,7 @@ import { Reveal } from "./Reveal";
 import { SectionShell } from "./SectionShell";
 import Github from "../../../public/svg/Github";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Projects() {
   return (
@@ -15,11 +16,12 @@ export function Projects() {
     >
       <div className="space-y-6">
         {projects.map((project, i) => (
+          project.featured && 
           <Reveal as="article" key={project.name} delay={i * 0.07}>
             <div className="card-lift grid gap-6 rounded-2xl border border-border bg-surface/50 p-5 sm:grid-cols-[1.1fr_1fr] sm:items-center sm:p-6">
               <div className="overflow-hidden rounded-xl border border-border">
                 <Image
-                  src={project.image}
+                  src={project.image || ""}
                   alt={`${project.name} interface preview`}
                   width={1200}
                   height={800}
@@ -66,7 +68,13 @@ export function Projects() {
         ))}
       </div>
 
-      <h3 className="mt-16 text-sm font-semibold uppercase tracking-[0.14em] text-foreground">
+      <Link href="/archive" className="flex gap-2 mt-12 items-center text-primary text-sm font-mono">
+        <span aria-hidden className="h-px flex-1 bg-border" />
+        View All Project Archive
+        <span aria-hidden className="h-px flex-1 bg-border" />
+      </Link>
+
+      {/* <h3 className="mt-12 text-sm font-semibold uppercase tracking-[0.14em] text-foreground">
         Other things I&apos;ve built
       </h3>
       <ul className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -111,7 +119,7 @@ export function Projects() {
             </div>
           </Reveal>
         ))}
-      </ul>
+      </ul> */}
     </SectionShell>
   );
 }
