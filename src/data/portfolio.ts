@@ -84,46 +84,304 @@ export const experience: Experience[] = [
 export type Project = {
   name: string;
   description: string;
-  image: string;
+  image?: string;
   stack: string[];
   github: string;
-  demo: string;
+  demo?: string;
   featured?: boolean;
+  year?: string;
+  madeAt?: string
 };
 
 export const projects: Project[] = [
   {
-    name: "Fed By Grace",
+    name: "Anomaly-Based Detection",
     description:
-      "A modern pastries ordering platform that streamlines online ordering, menu management, and customer engagement through a fast, responsive, and mobile-first digital experience.",
-    image: "/images/fedbygrace2.png",
-    stack: ["Next.js", "Node.js","Redux", "Tailwind"],
-    github: "https://github.com/omotoshoayomikun/grace-pastries",
-    demo: "https://www.fedbygraces.com",
-    featured: true,
+      "A multi-level intrusion prevention and security monitoring system that detects anomalous and malicious activity, analyzes threats in real time, assigns risk scores, blocks suspicious requests, and maintains centralized security logs for administrators.",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "Redux Toolkit",
+      "Socket.IO",
+      "JWT",
+      "Cloudinary",
+    ],
+    github:
+      "https://github.com/omotoshoayomikun/frontend-data-subscribtion",
+    demo: "https://intrusion-prevention-log-management-omega.vercel.app",
+    year: "2026",
+    madeAt: "",
   },
+
   {
-    name: "3pcon",
+    name: "EdTech",
     description:
-      "A suite of AI-powered enterprise web applications that accelerate digital transformation through workflow automation, intelligent business processes, and scalable cloud-based solutions.",
-    image: "/images/3pcon.png",
-    stack: ["Next.js", "Node.js","Redux", "Tailwind"],
-    github: "https://github.com/omotoshoayomikun/3pcon",
-    demo: "https://3pcon.com/",
-    featured: true,
+      "A modern educational technology platform designed to connect learners with digital learning resources through interactive experiences, structured content, and intelligent features that improve accessibility and engagement.",
+    stack: ["Next.js", "TypeScript", "Node.js", "Redux Toolkit", "Tailwind CSS"],
+    github: "https://github.com/omotoshoayomikun/surge",
+    demo: "https://www.surge.com.ng",
+    year: "2026",
+    madeAt: "Surge",
   },
+
   {
     name: "Proptriz",
     description:
-      "A digital Web3 Ai powered real estate platform connecting buyers, renters, agents, and property owners through intelligent property discovery and seamless property management.",
+      "A Web3 and AI-powered real estate platform that simplifies property discovery by connecting buyers, renters, agents, and property owners through intelligent search, location-based discovery, and AI-assisted recommendations.",
     image: "/images/proptriz.png",
-    stack: ["React.js", "Next.js", "TypeScript", "Redux", "Leaflet", "AWS"],
+    stack: [
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "Redux Toolkit",
+      "Leaflet",
+      "AWS",
+    ],
     github: "https://github.com/haycoder24/nigeria-property-hub",
-    demo: "https://proptriz.com/",
+    demo: "https://proptriz.com",
     featured: true,
+    year: "2026",
+    madeAt: "Proptriz REC",
+  },
+
+  {
+    name: "Loan Management System",
+    description:
+      "A financial management platform for handling loan applications, borrower and guarantor verification, interest calculations, repayment schedules, disbursements, and loan lifecycle management.",
+    image: "/images/proptriz.png",
+    stack: [
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "Redux Toolkit",
+      "Express.js",
+      "Node.js",
+      "MongoDB",
+      "Mongoose",
+      "Cloudinary",
+    ],
+    github: "https://github.com/omotoshoayomikun/asavictory",
+    demo: "https://asavictory.vercel.app",
+    year: "2026",
+    madeAt: "Asa-Victory",
+  },
+
+  {
+    name: "Fed By Grace",
+    description:
+      "A modern pastry ordering platform that enables customers to browse products, place orders, and interact with the business through a fast, responsive, and mobile-first digital experience.",
+    image: "/images/fedbygrace2.png",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Redux Toolkit",
+      "Tailwind CSS",
+    ],
+    github: "https://github.com/omotoshoayomikun/grace-pastries",
+    demo: "https://fedbygraces.com",
+    featured: true,
+    year: "2025",
+    madeAt: "Grace Pastries",
+  },
+
+  {
+    name: "3pcon",
+    description:
+      "A collection of enterprise-focused web applications built to streamline business operations, automate workflows, and deliver scalable digital solutions through modern cloud-ready technologies.",
+    image: "/images/3pcon.png",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Redux Toolkit",
+      "Tailwind CSS",
+    ],
+    github: "https://github.com/omotoshoayomikun/3pcon",
+    demo: "https://3pcon.com",
+    featured: true,
+    year: "2025",
+    madeAt: "3pcon ICT",
+  },
+
+  {
+    name: "FinTech Apps",
+    description:
+      "A digital financial services platform designed to simplify everyday financial activities through accessible payment services, account management, and integrated financial tools.",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Redux Toolkit",
+      "Tailwind CSS",
+    ],
+    github:
+      "https://github.com/omotoshoayomikun/frontend-data-subscribtion",
+    demo: "https://kitaodola.com",
+    year: "2025",
+    madeAt: "Kitaodola",
+  },
+
+  {
+    name: "Career Social Network",
+    description:
+      "A professional networking platform that enables users to build career connections, discover opportunities, share professional experiences, and collaborate with other professionals.",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Redux Toolkit",
+      "Tailwind CSS",
+    ],
+    github: "https://github.com/omotoshoayomikun/networking-web-app",
+    demo: "https://networking-web-app-tau.vercel.app",
+    year: "2025",
+    madeAt: "",
+  },
+
+  {
+    name: "Sentiment Analysis",
+    description:
+      "An NLP-powered application that analyzes text to identify sentiment and emotional tone, classifying content into positive, negative, or neutral categories to provide actionable insights from user-generated data.",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Redux Toolkit",
+      "Tailwind CSS",
+      "NLP",
+    ],
+    github: "https://github.com/omotoshoayomikun/sentiment-analysis",
+    demo: "https://sentiment-analysis-lac-rho.vercel.app",
+    year: "2025",
+    madeAt: "",
+  },
+
+  {
+    name: "Real-Time AI Verification",
+    description:
+      "An AI-powered browser extension designed to help users verify online information in real time by analyzing web content and providing contextual insights to support more informed decisions.",
+    stack: [
+      "React",
+      "TypeScript",
+      "JavaScript",
+      "Browser Extension APIs",
+      "AI APIs",
+    ],
+    github: "https://github.com/FactReact/factreact_extension",
+    year: "2024",
+    madeAt: "FactReact",
+  },
+
+  {
+    name: "Map of PI",
+    description:
+      "A Web3 platform built around the Pi Network ecosystem, providing users with tools and services for discovering, interacting with, and participating in the growing Pi digital economy.",
+    stack: [
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "Redux Toolkit",
+      "Tailwind CSS",
+      "Pi Network SDK",
+    ],
+    github: "https://github.com/map-of-pi/map-of-pi-frontend",
+    demo: "https://www.mapofpi.com",
+    year: "2024",
+    madeAt: "Map of PI",
+  },
+
+  {
+    name: "Simxchanger",
+    description:
+      "A digital asset exchange platform that enables users to buy and sell cryptocurrencies and digital currencies through a fast, secure, and user-friendly trading experience.",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Redux Toolkit",
+      "Tailwind CSS",
+    ],
+    github: "https://github.com/map-of-pi/map-of-pi-frontend",
+    demo: "https://www.mapofpi.com",
+    year: "2024",
+    madeAt: "Simxchanger",
+  },
+
+  {
+    name: "Linters & Static Analysis Tools",
+    description:
+      "Developer productivity tools that analyze source code to identify syntax errors, potential bugs, code quality issues, and common development mistakes across web technologies.",
+    stack: [
+      "JavaScript",
+      "TypeScript",
+      "HTML",
+      "CSS",
+      "Static Analysis",
+      "VS Code Extension API",
+    ],
+    github: "https://github.com/FactReact/factreact_extension",
+    year: "2023",
+    madeAt: "Baseline-Lite",
+  },
+
+  {
+    name: "Marathon",
+    description:
+      "A hospitality management platform designed to support hotel and resort operations by providing digital tools for managing guests, bookings, services, and day-to-day hospitality workflows.",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Redux Toolkit",
+      "Tailwind CSS",
+    ],
+    github: "https://github.com/martins0023/marathon",
+    demo: "https://marathon-tan.vercel.app",
+    year: "2023",
+    madeAt: "Marathon",
+  },
+
+  {
+    name: "Movie Recommendation Engine",
+    description:
+      "A movie discovery platform that helps users find relevant films based on their preferences, genres, ratings, and existing movie selections through an intelligent recommendation experience.",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Redux Toolkit",
+      "TMDB API",
+      "Tailwind CSS",
+    ],
+    github: "https://github.com/omotoshoayomikun/ai-generated-video-project",
+    demo: "https://movies-engine-pi.vercel.app/",
+    year: "2023",
+    madeAt: "",
+  },
+
+  {
+    name: "Getlore",
+    description:
+      "An interactive e-learning platform that connects students and educators through digital learning resources, engaging content, and collaborative tools designed to support modern online education.",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Redux Toolkit",
+      "Tailwind CSS",
+    ],
+    github:
+      "https://github.com/omotoshoayomikun/ai-generated-video-project",
+    demo: "https://e-learning-backup.vercel.app",
+    year: "2023",
+    madeAt: "",
   },
 ];
-
 export const otherProjects = [
   {
     name: "Mummy Dara",
